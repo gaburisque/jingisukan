@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北海道成吉思汗 大黒屋</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Noto Serif JP', serif;
+background-color: #000;
+color: #fff;
+}
+.gold-text {
+color: #D4AF37;
+}
+.red-text {
+color: #C41E3A;
+}
+.section-title {
+font-weight: 700;
+writing-mode: vertical-rl;
+text-orientation: upright;
+letter-spacing: 0.5rem;
+}
+.menu-item-border {
+border: 1px solid #D4AF37;
+}
+.page-indicator {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.5);
+transition: background-color 0.3s ease;
+}
+.page-indicator:hover {
+background-color: rgba(255, 255, 255, 0.8);
+}
+.page-indicator.active {
+background-color: #fff;
+}
+.slide {
+will-change: opacity;
+}
+.slide img {
+will-change: transform;
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D4AF37',secondary:'#C41E3A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="relative">
+<!-- ナビゲーションバー -->
+<nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 px-4 py-3 flex justify-between items-center">
+<div class="text-white text-xl font-['Pacifico']">logo</div>
+<button id="menuToggle" class="w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-2x"></i>
+</button>
+</nav>
+<!-- メニューオーバーレイ -->
+<div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex flex-col items-center justify-center">
+<button id="closeMenu" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-white">
+<i class="ri-close-line ri-2x"></i>
+</button>
+<ul class="text-center space-y-8">
+<li><a href="#about" class="text-white text-xl">店舗紹介</a></li>
+<li><a href="#concept" class="text-white text-xl">こだわり</a></li>
+<li><a href="#menu" class="text-white text-xl">メニュー</a></li>
+<li><a href="#info" class="text-white text-xl">店舗情報</a></li>
+<li><a href="#reservation" class="text-white text-xl">ご予約</a></li>
+</ul>
+<div class="mt-12 flex space-x-6">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-facebook-line ri-lg"></i>
+</a>
+</div>
+</div>
+<!-- ヒーローセクション -->
+<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div id="slideshow" class="relative w-full h-full">
+<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20delicious%20Jingisukan%20%28Genghiskan%29%20Japanese%20grilled%20lamb%20meat%20on%20a%20hot%20plate%20with%20vegetables%2C%20chopsticks%20picking%20up%20a%20piece%20of%20meat%2C%20dipping%20sauce%20in%20a%20small%20bowl%2C%20traditional%20Japanese%20yakiniku%20style%2C%20dramatic%20lighting%2C%20professional%20food%20photography%2C%20high-end%20restaurant%20atmosphere&width=375&height=500&seq=1&orientation=portrait" alt="ジンギスカン" class="w-full h-full object-cover object-center transform scale-100">
+</div>
+<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20restaurant%20interior%20with%20Jingisukan%20grill%20setup%2C%20warm%20ambient%20lighting%2C%20elegant%20table%20settings%2C%20authentic%20atmosphere%2C%20professional%20interior%20photography&width=375&height=500&seq=7&orientation=portrait" alt="店内の様子" class="w-full h-full object-cover object-center transform scale-100">
+</div>
+<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+<img src="https://readdy.ai/api/search-image?query=Chef%20preparing%20premium%20Jingisukan%20with%20fresh%20vegetables%20and%20high-quality%20lamb%20meat%2C%20dramatic%20steam%20rising%2C%20professional%20cooking%20scene%20in%20traditional%20Japanese%20restaurant&width=375&height=500&seq=8&orientation=portrait" alt="調理シーン" class="w-full h-full object-cover object-center transform scale-100">
+</div>
+<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+<img src="https://readdy.ai/api/search-image?query=Assorted%20cuts%20of%20premium%20lamb%20meat%20beautifully%20arranged%20on%20a%20traditional%20Japanese%20plate%2C%20ready%20for%20Jingisukan%2C%20professional%20food%20styling%2C%20dramatic%20lighting&width=375&height=500&seq=9&orientation=portrait" alt="ラム肉の盛り合わせ" class="w-full h-full object-cover object-center transform scale-100">
+</div>
+<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+<img src="https://readdy.ai/api/search-image?query=Completed%20Jingisukan%20dish%20with%20grilled%20vegetables%20and%20special%20sauce%2C%20steam%20rising%2C%20dramatic%20presentation%20on%20traditional%20Japanese%20tableware%2C%20professional%20food%20photography&width=375&height=500&seq=10&orientation=portrait" alt="完成した料理" class="w-full h-full object-cover object-center transform scale-100">
+</div>
+<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+</div>
+</div>
+<div class="relative z-10 text-center px-6 mt-16">
+<div class="mb-6">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20restaurant%20logo%20with%20a%20chef%20character%20holding%20a%20gavel%2C%20white%20and%20gold%20colors%20on%20black%20background%2C%20minimalist%20elegant%20design%2C%20Japanese%20calligraphy%20style%20text&width=150&height=150&seq=2&orientation=squarish" alt="大黒屋ロゴ" class="w-32 h-32 mx-auto">
+</div>
+<h1 class="text-primary text-3xl font-bold mb-2">北海道成吉思汗</h1>
+<h2 class="text-white text-4xl font-bold mb-6">大黒屋</h2>
+<p class="text-white text-sm mb-8">ジンギスカン・焼肉なら「旭川成吉思汗 大黒屋」へ</p>
+<div class="flex justify-center">
+<a href="#reservation" class="bg-primary text-black font-bold py-3 px-8 !rounded-button">ご予約はこちら</a>
+</div>
+</div>
+<div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-2">
+<div class="page-indicator active cursor-pointer" data-slide="0"></div>
+<div class="page-indicator cursor-pointer" data-slide="1"></div>
+<div class="page-indicator cursor-pointer" data-slide="2"></div>
+<div class="page-indicator cursor-pointer" data-slide="3"></div>
+<div class="page-indicator cursor-pointer" data-slide="4"></div>
+</div>
+</section>
+<!-- 店舗紹介セクション -->
+<section id="about" class="py-20 px-6 bg-black">
+<div class="flex mb-12">
+<h2 class="section-title gold-text text-2xl mr-8">店舗紹介</h2>
+<div>
+<h3 class="text-white text-xl font-bold mb-4">伝統の味を<br>現代に伝える</h3>
+<p class="text-gray-300 leading-relaxed">
+創業50年、北海道旭川で愛され続ける老舗ジンギスカン専門店。厳選された北海道産ラム肉と秘伝のタレで仕上げる極上の味わいをご堪能ください。職人の技が光る伝統の調理法で、素材本来の旨みを最大限に引き出します。
+</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20restaurant%20interior%20with%20dark%20wood%20elements%2C%20warm%20lighting%2C%20elegant%20table%20settings%2C%20minimalist%20Japanese%20aesthetic%2C%20high-end%20dining%20atmosphere&width=175&height=200&seq=3&orientation=portrait" alt="店内の様子" class="w-full h-48 object-cover !rounded-md">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20chef%20preparing%20Jingisukan%20%28Genghiskan%29%20on%20a%20special%20dome-shaped%20grill%2C%20focused%20expression%2C%20traditional%20Japanese%20chef%20uniform%2C%20professional%20cooking%20technique%2C%20restaurant%20kitchen&width=175&height=200&seq=4&orientation=portrait" alt="料理人" class="w-full h-48 object-cover !rounded-md">
+</div>
+</section>
+<!-- こだわりセクション -->
+<section id="concept" class="py-20 px-6 bg-black">
+<div class="flex mb-12">
+<h2 class="section-title gold-text text-2xl mr-8">こだわり</h2>
+<div>
+<h3 class="text-white text-xl font-bold mb-4">素材と技法への<br>揺るぎない信念</h3>
+</div>
+</div>
+<div class="space-y-12">
+<div class="flex items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-primary !rounded-full flex-shrink-0 mr-4">
+<i class="ri-award-line ri-xl text-black"></i>
+</div>
+<div>
+<h4 class="text-white text-lg font-bold mb-2">厳選された北海道産ラム肉</h4>
+<p class="text-gray-300 text-sm leading-relaxed">
+北海道の契約牧場から直接仕入れる新鮮なラム肉。肉質の良さと風味にこだわり、一頭一頭丁寧に選別しています。
+</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-primary !rounded-full flex-shrink-0 mr-4">
+<i class="ri-fire-line ri-xl text-black"></i>
+</div>
+<div>
+<h4 class="text-white text-lg font-bold mb-2">伝統の調理技法</h4>
+<p class="text-gray-300 text-sm leading-relaxed">
+創業以来変わらない特製の鉄鍋と熟練の火加減。素材の旨みを閉じ込め、ジューシーな味わいを実現する職人技をご堪能ください。
+</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-16 h-16 flex items-center justify-center bg-primary !rounded-full flex-shrink-0 mr-4">
+<i class="ri-flask-line ri-xl text-black"></i>
+</div>
+<div>
+<h4 class="text-white text-lg font-bold mb-2">秘伝のタレ</h4>
+<p class="text-gray-300 text-sm leading-relaxed">
+50年間受け継がれる秘伝のタレは、20種類以上の厳選素材を独自の配合で仕込み、3日間かけて熟成させています。
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- メニューセクション -->
+<section id="menu" class="py-20 px-6 bg-black">
+<div class="flex mb-12">
+<h2 class="section-title gold-text text-2xl mr-8">メニュー</h2>
+<div>
+<h3 class="text-white text-xl font-bold mb-4">伝統の味わいと<br>新しい発見</h3>
+</div>
+</div>
+<div class="space-y-8">
+<div class="menu-item-border p-4 !rounded-md">
+<h4 class="text-primary text-lg font-bold mb-2">極上コース <span class="text-white">¥5,800</span></h4>
+<p class="text-gray-300 text-sm mb-4">厳選ラム肉の盛り合わせ、特製タレ、季節の野菜、〆の麺付き</p>
+<img src="https://readdy.ai/api/search-image?query=Premium%20Jingisukan%20%28Genghiskan%29%20course%20meal%20set%20with%20various%20cuts%20of%20lamb%20meat%20arranged%20beautifully%20on%20a%20plate%2C%20side%20vegetables%2C%20special%20sauce%2C%20and%20finishing%20noodles%2C%20high-end%20Japanese%20restaurant%20presentation&width=325&height=200&seq=5&orientation=landscape" alt="極上コース" class="w-full h-48 object-cover !rounded-md">
+</div>
+<div class="menu-item-border p-4 !rounded-md">
+<h4 class="text-primary text-lg font-bold mb-2">匠のおまかせ <span class="text-white">¥7,500</span></h4>
+<p class="text-gray-300 text-sm mb-4">店主厳選の最高級ラム肉、特別な希少部位、秘伝のタレ2種、季節の野菜、〆の雑炊付き</p>
+<img src="https://readdy.ai/api/search-image?query=Luxury%20Jingisukan%20%28Genghiskan%29%20chefs%20special%20course%20with%20premium%20cuts%20of%20lamb%20meat%2C%20rare%20parts%2C%20two%20types%20of%20special%20sauce%2C%20seasonal%20vegetables%2C%20and%20finishing%20porridge%2C%20elegant%20Japanese%20restaurant%20presentation&width=325&height=200&seq=6&orientation=landscape" alt="匠のおまかせ" class="w-full h-48 object-cover !rounded-md">
+</div>
+<div class="menu-item-border p-4 !rounded-md">
+<h4 class="text-primary text-lg font-bold mb-2">単品メニュー</h4>
+<ul class="text-gray-300 text-sm space-y-2 mb-4">
+<li class="flex justify-between">
+<span>特選ラムロース</span>
+<span>¥2,400</span>
+</li>
+<li class="flex justify-between">
+<span>ラムショルダー</span>
+<span>¥2,100</span>
+</li>
+<li class="flex justify-between">
+<span>ラムタン</span>
+<span>¥1,800</span>
+</li>
+<li class="flex justify-between">
+<span>野菜盛り合わせ</span>
+<span>¥1,200</span>
+</li>
+<li class="flex justify-between">
+<span>〆の麺</span>
+<span>¥800</span>
+</li>
+</ul>
+</div>
+<div class="menu-item-border p-4 !rounded-md">
+<h4 class="text-primary text-lg font-bold mb-2">お飲み物</h4>
+<ul class="text-gray-300 text-sm space-y-2">
+<li class="flex justify-between">
+<span>北海道地酒（各種）</span>
+<span>¥800〜</span>
+</li>
+<li class="flex justify-between">
+<span>サッポロクラシック生ビール</span>
+<span>¥650</span>
+</li>
+<li class="flex justify-between">
+<span>ハイボール</span>
+<span>¥600</span>
+</li>
+<li class="flex justify-between">
+<span>ソフトドリンク（各種）</span>
+<span>¥450</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 text-center">
+<a href="#" class="inline-block border border-primary text-primary py-2 px-6 !rounded-button">メニュー一覧を見る</a>
+</div>
+</section>
+<!-- 店舗情報セクション -->
+<section id="info" class="py-20 px-6 bg-black">
+<div class="flex mb-12">
+<h2 class="section-title gold-text text-2xl mr-8">店舗情報</h2>
+<div>
+<h3 class="text-white text-xl font-bold mb-4">アクセス・<br>営業時間</h3>
+</div>
+</div>
+<div class="space-y-8">
+<div>
+<h4 class="text-primary text-lg font-bold mb-4">営業時間</h4>
+<table class="w-full text-gray-300 text-sm">
+<tr class="border-b border-gray-700">
+<td class="py-2">ランチ</td>
+<td class="py-2">11:30〜14:30（L.O. 14:00）</td>
+</tr>
+<tr class="border-b border-gray-700">
+<td class="py-2">ディナー</td>
+<td class="py-2">17:00〜22:00（L.O. 21:30）</td>
+</tr>
+<tr>
+<td class="py-2">定休日</td>
+<td class="py-2">水曜日（祝日の場合は営業）</td>
+</tr>
+</table>
+</div>
+<div>
+<h4 class="text-primary text-lg font-bold mb-4">アクセス</h4>
+<p class="text-gray-300 text-sm mb-4">
+〒070-0035<br>
+北海道旭川市五条通8丁目1703-58<br>
+JR旭川駅から徒歩10分
+</p>
+<div class="h-64 bg-gray-800 !rounded-md overflow-hidden">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="地図" class="w-full h-full object-cover">
+</div>
+</div>
+<div>
+<h4 class="text-primary text-lg font-bold mb-4">お問い合わせ</h4>
+<p class="text-gray-300 text-sm">
+TEL: 0166-23-4567<br>
+※ご予約はお電話またはウェブサイトから承っております。
+</p>
+</div>
+</div>
+</section>
+<!-- 予約セクション -->
+<section id="reservation" class="py-20 px-6 bg-black">
+<div class="flex mb-12">
+<h2 class="section-title gold-text text-2xl mr-8">ご予約</h2>
+<div>
+<h3 class="text-white text-xl font-bold mb-4">お席の<br>ご予約</h3>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label for="name" class="block text-white text-sm font-medium mb-2">お名前 <span class="text-secondary">*</span></label>
+<input type="text" id="name" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+</div>
+<div>
+<label for="tel" class="block text-white text-sm font-medium mb-2">電話番号 <span class="text-secondary">*</span></label>
+<input type="tel" id="tel" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+</div>
+<div>
+<label for="email" class="block text-white text-sm font-medium mb-2">メールアドレス <span class="text-secondary">*</span></label>
+<input type="email" id="email" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+</div>
+<div>
+<label for="date" class="block text-white text-sm font-medium mb-2">ご来店日 <span class="text-secondary">*</span></label>
+<input type="date" id="date" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+</div>
+<div>
+<label for="time" class="block text-white text-sm font-medium mb-2">ご来店時間 <span class="text-secondary">*</span></label>
+<select id="time" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+<option value="">選択してください</option>
+<option>11:30</option>
+<option>12:00</option>
+<option>12:30</option>
+<option>13:00</option>
+<option>13:30</option>
+<option>17:00</option>
+<option>17:30</option>
+<option>18:00</option>
+<option>18:30</option>
+<option>19:00</option>
+<option>19:30</option>
+<option>20:00</option>
+<option>20:30</option>
+</select>
+</div>
+<div>
+<label for="people" class="block text-white text-sm font-medium mb-2">人数 <span class="text-secondary">*</span></label>
+<select id="people" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md" required>
+<option value="">選択してください</option>
+<option>1名</option>
+<option>2名</option>
+<option>3名</option>
+<option>4名</option>
+<option>5名</option>
+<option>6名</option>
+<option>7名</option>
+<option>8名以上（詳細は備考欄へ）</option>
+</select>
+</div>
+<div>
+<label for="notes" class="block text-white text-sm font-medium mb-2">備考</label>
+<textarea id="notes" rows="4" class="w-full bg-gray-900 border-none text-white px-4 py-3 !rounded-md"></textarea>
+</div>
+<div class="text-center">
+<button type="submit" class="bg-primary text-black font-bold py-3 px-8 !rounded-button">予約を確定する</button>
+</div>
+</form>
+<div class="mt-8 text-center text-gray-400 text-xs">
+<p>※ご予約は2名様から承っております。</p>
+<p>※キャンセルは前日までにご連絡ください。</p>
+<p>※当日キャンセルはキャンセル料が発生する場合がございます。</p>
+</div>
+</section>
+<!-- フッター -->
+<footer class="py-12 px-6 bg-black border-t border-gray-800">
+<div class="text-center mb-8">
+<div class="text-white text-2xl font-['Pacifico'] mb-4">logo</div>
+<p class="text-gray-400 text-sm">北海道成吉思汗 大黒屋</p>
+</div>
+<div class="flex justify-center space-x-6 mb-8">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center text-white border border-white rounded-full">
+<i class="ri-facebook-line ri-lg"></i>
+</a>
+</div>
+<div class="text-center text-gray-500 text-xs">
+<p>〒070-0035 北海道旭川市五条通8丁目1703-58</p>
+<p>TEL: 0166-23-4567</p>
+<p class="mt-4">© 2025 北海道成吉思汗 大黒屋 All Rights Reserved.</p>
+</div>
+</footer>
+<!-- 予約ボタン（固定） -->
+<a href="#reservation" class="fixed bottom-6 right-6 bg-primary text-black font-bold w-14 h-14 !rounded-full flex items-center justify-center shadow-lg">
+<i class="ri-calendar-line ri-lg"></i>
+</a>
+<script id="menuToggleScript">
+document.addEventListener('DOMContentLoaded', function() {
+const menuToggle = document.getElementById('menuToggle');
+const closeMenu = document.getElementById('closeMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuLinks = menuOverlay.querySelectorAll('a');
+menuToggle.addEventListener('click', function() {
+menuOverlay.classList.remove('hidden');
+menuOverlay.classList.add('flex');
+document.body.style.overflow = 'hidden';
+});
+closeMenu.addEventListener('click', function() {
+menuOverlay.classList.add('hidden');
+menuOverlay.classList.remove('flex');
+document.body.style.overflow = '';
+});
+menuLinks.forEach(link => {
+link.addEventListener('click', function() {
+menuOverlay.classList.add('hidden');
+menuOverlay.classList.remove('flex');
+document.body.style.overflow = '';
+});
+});
+});
+</script>
+<script id="smoothScrollScript">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const navbarHeight = 60;
+const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="slideshowScript">
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.page-indicator');
+    let currentSlide = 0;
+    let slideInterval;
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            const img = slide.querySelector('img');
+            if (i === index) {
+                slide.style.opacity = '1';
+                img.style.transform = 'scale(1.1)';
+                img.style.transition = 'transform 5s ease-out';
+            } else {
+                slide.style.opacity = '0';
+                img.style.transform = 'scale(1)';
+            }
+        });
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    function startSlideshow() {
+        showSlide(0);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            currentSlide = index;
+            showSlide(currentSlide);
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    });
+    startSlideshow();
+});
+</script>
+<script id="formValidationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.querySelector('form');
+if (form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+// 簡易バリデーション
+const name = document.getElementById('name').value;
+const tel = document.getElementById('tel').value;
+const email = document.getElementById('email').value;
+const date = document.getElementById('date').value;
+const time = document.getElementById('time').value;
+const people = document.getElementById('people').value;
+if (!name || !tel || !email || !date || !time || !people) {
+// カスタムアラート表示（実際のプロジェクトではより洗練された方法で）
+const alertDiv = document.createElement('div');
+alertDiv.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70';
+alertDiv.innerHTML = `
+<div class="bg-gray-900 p-6 !rounded-lg max-w-xs w-full">
+<h3 class="text-white text-lg font-bold mb-4">入力エラー</h3>
+<p class="text-gray-300 mb-6">必須項目をすべて入力してください。</p>
+<div class="text-center">
+<button class="bg-primary text-black font-bold py-2 px-6 !rounded-button close-alert">閉じる</button>
+</div>
+</div>
+`;
+document.body.appendChild(alertDiv);
+// 閉じるボタンの処理
+alertDiv.querySelector('.close-alert').addEventListener('click', function() {
+document.body.removeChild(alertDiv);
+});
+return;
+}
+// 送信成功時の処理
+const successDiv = document.createElement('div');
+successDiv.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70';
+successDiv.innerHTML = `
+<div class="bg-gray-900 p-6 !rounded-lg max-w-xs w-full">
+<h3 class="text-white text-lg font-bold mb-4">予約完了</h3>
+<p class="text-gray-300 mb-6">ご予約ありがとうございます。確認メールをお送りしましたのでご確認ください。</p>
+<div class="text-center">
+<button class="bg-primary text-black font-bold py-2 px-6 !rounded-button close-success">閉じる</button>
+</div>
+</div>
+`;
+document.body.appendChild(successDiv);
+// 閉じるボタンの処理
+successDiv.querySelector('.close-success').addEventListener('click', function() {
+document.body.removeChild(successDiv);
+form.reset();
+});
+});
+}
+});
+</script>
+</body>
+</html>
